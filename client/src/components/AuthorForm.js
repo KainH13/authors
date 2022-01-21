@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 // components
 
 const AuthorForm = (props) => {
-    const { initialName, onSubmitAction, errors } = props;
+    const { initialName, onSubmitAction, action, errors } = props;
 
     // store for form values
     const [name, setName] = useState(initialName);
@@ -16,7 +16,7 @@ const AuthorForm = (props) => {
 
     return (
         <div className="border rounded p-2 m-5">
-            <h2 className="text-center">Add an author</h2>
+            <h2 className="text-center">{action} an author</h2>
             <form onSubmit={submitHandler}>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">

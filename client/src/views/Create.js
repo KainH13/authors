@@ -27,6 +27,7 @@ const Create = (props) => {
             <AuthorForm
                 initialName=""
                 onSubmitAction={createProduct}
+                action="Add"
                 errors={errors}
             />
         </div>

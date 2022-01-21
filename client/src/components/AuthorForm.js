@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "@reach/router";
 
 // components
 
@@ -37,7 +38,10 @@ const AuthorForm = (props) => {
                     ) : null}
                 </div>
 
-                <button type="submit" className="btn btn-primary">
+                <Link className="btn btn-outline-primary" to="/">
+                    Cancel
+                </Link>
+                <button type="submit" className="btn btn-outline-primary mx-2">
                     Submit
                 </button>
             </form>

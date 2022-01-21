@@ -20,7 +20,7 @@ const AuthorList = (props) => {
                             </Link>
                             <button
                                 className="card-link btn btn-outline-danger mx-2"
-                                onClick={deleteAuthor}
+                                onClick={() => deleteAuthor(author._id)}
                             >
                                 Delete
                             </button>

@@ -5,10 +5,11 @@ const AuthorList = (props) => {
     const { authors, deleteAuthor } = props;
 
     return (
-        <div>
+        <div className="card m-2 p-2">
+            <h2>Authors:</h2>
             {authors.map((author, index) => {
                 return (
-                    <div className="card mx-5 my-2" key={index}>
+                    <div className="card mx-1 my-2" key={index}>
                         <div className="card-body">
                             <h3 className="card-title">{author.name}</h3>
                             <Link

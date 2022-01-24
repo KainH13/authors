@@ -3,6 +3,8 @@ const Author = require("../models/author.model");
 module.exports = {
     findAllAuthors: (req, res) => {
         Author.find()
+            .collation({ locale: "en", strength: 2 })
+            .sort({ name: 1 })
             .then((allAuthors) => {
                 console.log(allAuthors);
                 res.json(allAuthors);

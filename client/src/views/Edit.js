@@ -22,6 +22,7 @@ const Edit = (props) => {
             })
             .catch((err) => {
                 console.log(err);
+                navigate("/author/edit/error")
             });
     }, []);
 
@@ -40,7 +41,7 @@ const Edit = (props) => {
 
     return (
         <div>
-            <h1>Favorite Authors</h1>
+            <h1 className="text-center">Favorite Authors</h1>
             {loaded && (
                 <AuthorForm
                     initialName={person.name}

@@ -5,6 +5,7 @@ import { Router } from "@reach/router";
 import Home from "./views/Home";
 import Create from "./views/Create";
 import Edit from "./views/Edit";
+import EditError from "./views/EditError";
 
 // bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,6 +17,7 @@ function App() {
                 <Home path="/" />
                 <Create path="/author/create" />
                 <Edit path="/author/edit/:id" />
+                <EditError path="/author/edit/error" />
             </Router>
         </div>
     );

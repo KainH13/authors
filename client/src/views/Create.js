@@ -23,7 +23,7 @@ const Create = (props) => {
 
     return (
         <div>
-            <h1>Favorite Authors</h1>
+            <h1 className="text-center">Favorite Authors</h1>
             <AuthorForm
                 initialName=""
                 onSubmitAction={createProduct}

@@ -9,7 +9,6 @@ const Edit = (props) => {
     const { id } = props;
 
     const [name, setName] = useState("");
-    // const [loaded, setLoaded] = useState(false);
     const [errors, setErrors] = useState([]);
 
     useEffect(() => {
@@ -18,7 +17,6 @@ const Edit = (props) => {
             .then((res) => {
                 console.log(res.data);
                 setName(res.data.name);
-                // setLoaded(true);
             })
             .catch((err) => {
                 console.log(err);
@@ -42,7 +40,6 @@ const Edit = (props) => {
     return (
         <div>
             <h1 className="text-center">Favorite Authors</h1>
-            {/* {loaded && ( */}
                 <AuthorForm
                     name={name}
                     setName={setName}
@@ -50,7 +47,6 @@ const Edit = (props) => {
                     action="Edit"
                     errors={errors}
                 />
-            {/* )} */}
         </div>
     );
 };

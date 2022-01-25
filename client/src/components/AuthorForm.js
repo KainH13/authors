@@ -6,9 +6,6 @@ import { Link } from "@reach/router";
 const AuthorForm = (props) => {
     const { name, setName, onSubmitAction, action, errors } = props;
 
-    // store for form values
-    // const [name, setName] = useState(initialName);
-
     const submitHandler = (e) => {
         e.preventDefault();
         onSubmitAction({ name });

@@ -6,6 +6,7 @@ import { navigate } from "@reach/router";
 import AuthorForm from "../components/AuthorForm";
 
 const Create = (props) => {
+    const [name, setName] = useState("");
     const [errors, setErrors] = useState([]);
 
     const createProduct = (product) => {
@@ -25,7 +26,8 @@ const Create = (props) => {
         <div>
             <h1 className="text-center">Favorite Authors</h1>
             <AuthorForm
-                initialName=""
+                name={name}
+                setName={setName}
                 onSubmitAction={createProduct}
                 action="Add"
                 errors={errors}

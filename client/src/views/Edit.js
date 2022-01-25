@@ -8,8 +8,8 @@ import AuthorForm from "../components/AuthorForm";
 const Edit = (props) => {
     const { id } = props;
 
-    const [person, setPerson] = useState();
-    const [loaded, setLoaded] = useState(false);
+    const [name, setName] = useState("");
+    // const [loaded, setLoaded] = useState(false);
     const [errors, setErrors] = useState([]);
 
     useEffect(() => {
@@ -17,8 +17,8 @@ const Edit = (props) => {
             .get(`http://localhost:8000/api/authors/${id}`)
             .then((res) => {
                 console.log(res.data);
-                setPerson(res.data);
-                setLoaded(true);
+                setName(res.data.name);
+                // setLoaded(true);
             })
             .catch((err) => {
                 console.log(err);
@@ -26,9 +26,9 @@ const Edit = (props) => {
             });
     }, []);
 
-    const updateProduct = (product) => {
+    const updateAuthor = (author) => {
         axios
-            .put(`http://localhost:8000/api/authors/${id}`, product)
+            .put(`http://localhost:8000/api/authors/${id}`, author)
             .then((res) => {
                 console.log(res);
                 navigate("/");
@@ -42,14 +42,15 @@ const Edit = (props) => {
     return (
         <div>
             <h1 className="text-center">Favorite Authors</h1>
-            {loaded && (
+            {/* {loaded && ( */}
                 <AuthorForm
-                    initialName={person.name}
-                    onSubmitAction={updateProduct}
+                    name={name}
+                    setName={setName}
+                    onSubmitAction={updateAuthor}
                     action="Edit"
                     errors={errors}
                 />
-            )}
+            {/* )} */}
         </div>
     );
 };
